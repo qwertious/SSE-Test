@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>SSE Test</title>
+</head>
+
+<body>
+    <p id="log"></p>
+    <script>
+        var log = document.getElementById("log");
+        var server = new EventSource("http://192.168.2.239/server.php");
+        server.onmessage = function(event) {
+            log.innerHTML += event.data + "<br>";
+        };
+    </script>
+</body>
+
+</html>
